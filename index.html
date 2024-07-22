@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        AOS.init();
+    </script>
+</head>
+<body>
+    <section class="showcase-container">
+        <div class="brand-container">
+            <img src="images/House logo.png" alt="Premium furniture showcase" />
+            <h1 class="brand-name">Project <span style="color: rgba(130, 130, 130, 1)">360</span></h1>
+        </div>
+        <header class="brand-header">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">New Arrivals</a>
+                <a href="#" class="nav-item">Outdoor</a>
+                <a href="#" class="nav-item">Living</a>
+                <a href="#" class="nav-item">Dining</a>
+                <a href="#" class="nav-item">Contact</a>
+            </nav>
+        </header>
+        <h2 class="hero-title">The Next <span style="color: rgba(130, 130, 130, 1)">Frontier</span> in</h2>
+        <h2 class="hero-subtitle">Premium <span style="color: rgba(130, 130, 130, 1)">Furniture</span></h2>
+        <img src="images/main.png" alt="Premium furniture showcase" class="hero-image" />
+        <section class="featured-section">
+            <p class="featured-description">Our designers' favorites picked for you! <br /> Seasonal hits and everyday favorites, find yours!</p>
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-column">
+                        <div class="gallery-item" data-aos="zoom-in">
+                            <img src="images/chair1.png" alt="Featured furniture item 1" class="gallery-image1" />
+                        </div>
+                        <div class="gallery-item" data-aos="zoom-in">
+                            <img src="images/Dinning.png" alt="Featured furniture item 2" class="gallery-image1" />
+                        </div>
+                        <div class="gallery-item" data-aos="zoom-in">
+                            <img src="images/chair2.png" alt="Featured furniture item 3" class="gallery-image1" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="new-arrivals-title">New Arrivals</h3>
+        </section>
+        <section class="category-section">
+            <div class="category-grid">
+                <div class="category-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16c282dd7c273a08ef188f93eb94e50976ac15e3f800111fc1d64d0f87ab20a6?apiKey=41efc68057654f27ae822ab781172932&" alt="Bedroom furniture category" class="category-image" />
+                    <h4 class="category-name">Beds</h4>
+                </div>
+                <div class="category-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb316787ff84980161cd965c4ec8a849024d292eee3a62a489526188b0fca66a?apiKey=41efc68057654f27ae822ab781172932&" alt="Sofa furniture category" class="category-image" />
+                    <h4 class="category-name">Sofa</h4>
+                </div>
+            </div>
+        </section>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/53531c289b580b119422c5d88fd4a2383603e8ff897cfb670084d9e2718ab6cf?apiKey=41efc68057654f27ae822ab781172932&" alt="Dresser product showcase" class="product-image" />
+        <h3 class="product-name">Dresser</h3>
+        <h2 class="product-name">Furniture Pie Chart</h2>
+        <!-- Canvas element for the pie chart -->
+        <section class="container4">
+            <canvas id="myPieChart" width="400" height="400"></canvas>
+        </section>
+        <!-- JavaScript file to create the pie chart -->
+        <script src="script.js"></script>
+        <h2 class="contact-title">Contact Us</h2>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="name" class="input-label">Name</label>
+                    <input type="text" id="name" class="input-field" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email" class="input-label">Email</label>
+                    <input type="email" id="email" class="input-field" placeholder="Your Email" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="input-label">Phone</label>
+                    <input type="tel" id="phone" class="input-field" placeholder="Your Phone Number" required />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="input-label">Password</label>
+                    <input type="password" id="password" class="password-field" placeholder="Your Password" required />
+                </div>
+                <div class="form-group">
+                    <label for="message" class="input-label">Message</label>
+                    <textarea id="message" class="input-field" placeholder="Your Message" rows="4"></textarea>
+                </div>
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit" class="login-button">
+                    <span class="button-background"></span>
+                    <span class="button-text">Submit</span>
+                </button>
+            </form>
+        </div>
+        <h2 class="mission-title">Our Mission</h2>
+        <p class="mission-description">To provide comfort in the best way possible.</p>
+        <footer class="footer-container">
+            <img src="images/Rectangle 41.png" alt="Social media links" class="hero-image2" />
+        </footer>
+    </section>
+</body>
+</html>
